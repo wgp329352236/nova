@@ -1,0 +1,4 @@
+framework module AHSDK {
+  header "AHSDK-Swift.h"
+  requires objc
+}

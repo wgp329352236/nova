@@ -1,0 +1,8 @@
+framework module "NovaCore" {
+    umbrella header "NovaCore.h"
+
+    export *
+    module * { export * }
+
+    use Foundation
+}
