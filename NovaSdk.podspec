@@ -13,7 +13,8 @@ Pod::Spec.new do |s|
   s.static_framework = true
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+    NovaSdk 是为iOS项目开发的私有组件库，集成了网络请求封装、自定义UI控件、图片资源管理等核心功能，
+    兼容iOS 11.0+，支持组件化集成，提升项目开发效率。
                        DESC
 
   s.homepage         = 'https://github.com/wgp329352236/NovaSdk'
