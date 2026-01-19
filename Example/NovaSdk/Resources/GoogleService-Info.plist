@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>925162069591-b7epsfo9gap8l0o22v2cflillrea9qpq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.925162069591-b7epsfo9gap8l0o22v2cflillrea9qpq</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>925162069591-amk8kbo510127p93v4cchiai96loce77.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBY_GgVelm3tEzS3zJnNQ3u8UXoy6o0LC0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>925162069591</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.novasonic.sdk.demo</string>
+	<key>PROJECT_ID</key>
+	<string>nova-sonic-sdk-demo</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nova-sonic-sdk-demo.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:925162069591:ios:efbca28d9f693f39458d12</string>
+</dict>
+</plist>

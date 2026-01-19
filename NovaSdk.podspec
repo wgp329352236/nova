@@ -1,5 +1,4 @@
-#
-# Be sure to run `pod lib lint NovaSdk.podspec' to ensure this is a
+# Be sure to run `pod lib lint NovaSdk.podspec` to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -11,7 +10,7 @@ Pod::Spec.new do |s|
   s.version          = '0.1.0'
   s.summary          = 'A short description of NovaSdk.'
   s.swift_versions   = ['5.8']
-  s.static_framework = true  # 静态框架必须开启，否则 xcframework 可能加载失败
+  s.static_framework = true
 
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
@@ -25,35 +24,74 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '15.0'
-  # 强制所有子依赖的部署版本≥15.0
   s.pod_target_xcconfig = {
-        'IPHONEOS_DEPLOYMENT_TARGET' => '15.0',
+        'ENABLE_BITCODE' => 'NO',
         'ENABLE_STRICT_DEPLOYMENT_TARGET_CHECKING' => 'YES',
-        # 禁用 arclite 库链接（关键修复）
-        'CLANG_ALLOW_ARC_LITE' => 'NO'
+        'CLANG_ALLOW_ARC_LITE' => 'NO',
+        # 关键：解决PSM类重复问题
+        'GCC_SYMBOLS_PRIVATE_EXTERN' => 'YES',
+        'OTHER_LDFLAGS' => ['-ObjC', '-fobjc-arc', '-undefined dynamic_lookup', '-Xlinker', '-no_deduplicate_classes'],
+        'DEBUG_INFORMATION_FORMAT' => 'dwarf-with-dsym',
+        'COPY_PHASE_STRIP' => 'NO'
   }
 
-    # 强制所有用户工程集成该 Pod 时也使用 15.0 部署目标
-    s.user_target_xcconfig = {
-            'IPHONEOS_DEPLOYMENT_TARGET' => '15.0'
-    }
-
-
   s.source_files = 'NovaSdk/Classes/**/*.{h,m,swift}'
+  s.exclude_files = [
+      'NovaSdk/Classes/**/PSM*.{h,m,mm,cpp,swift}',
+      'NovaSdk/Classes/**/PSM*/**/*.{h,m,mm,cpp,swift}',
+      'NovaSdk/Classes/**/*PSM*.{h,m,mm,cpp,swift}',
+      'NovaSdk/Classes/**/*psm*.{h,m,mm,cpp,swift}',
+      'NovaSdk/Classes/**/psm*/**/*.{h,m,mm,cpp,swift}'
+  ]
 
-  # s.resource_bundles = {
-  #   'NovaSdk' => ['NovaSdk/Assets/*.png']
-  # }
+  # 2. 配置资源 Bundle（关键）
+  # 格式：{ 'Bundle名称' => ['资源路径'] }
+  s.resource_bundles = {
+    'SdkResources' => [
+        'NovaSdk/Assets/**/*',  # 匹配 Assets 下所有资源（包括子目录）
+          # 也可精确指定：'NovaSdk/Assets/Images/*.png'
+          ]
+  }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+
   s.frameworks = 'UIKit', 'Foundation'
-  s.vendored_frameworks = 'Dependencies/Nova/*.xcframework'
-  s.xcconfig = {
-        'FRAMEWORK_SEARCH_PATHS' => '$(PODS_TARGET_SRCROOT)/Dependencies/Nova',
-        'HEADER_SEARCH_PATHS' => '$(PODS_TARGET_SRCROOT)/NovaSdk/Classes/**',
-        'SWIFT_INCLUDE_PATHS' => '$(PODS_TARGET_SRCROOT)/Dependencies/Nova',
-        'LD_RUNPATH_SEARCH_PATHS' => '@executable_path/Frameworks @loader_path/Frameworks'
-}
+  s.vendored_frameworks = [
+    'Dependencies/Nova/*.xcframework',
+    'Dependencies/CMP/*.xcframework',
 
-  s.dependency 'MMKV'
+    'Dependencies/ThinkingData/*.xcframework',
+    'Dependencies/Sobot/*.framework'
+  ]
+
+  s.xcconfig = {
+        'FRAMEWORK_SEARCH_PATHS' => ['$(PODS_ROOT)/../Dependencies/*/**'],
+        'HEADER_SEARCH_PATHS' => ['$(PODS_ROOT)/../NovaSdk/Classes/**'],
+        'SWIFT_INCLUDE_PATHS' => ['$(PODS_ROOT)/../Dependencies/Nova'],
+        'OTHER_LDFLAGS' => ['-ObjC', '-fobjc-arc', '-all_load'],
+        'LD_RUNPATH_SEARCH_PATHS' => '@executable_path/Frameworks @loader_path/Frameworks',
+        'ALWAYS_SEARCH_USER_PATHS' => 'NO'
+  }
+
+  s.dependency 'MMKV', '~> 2.3.0'
+  s.dependency 'Adjust', '~> 5.5.1'
+  s.dependency 'SnapKit', '~> 5.7.1'
+  s.dependency 'MBProgressHUD', '~> 1.2.0'
+  s.dependency 'HandyJSON', '~> 5.0.2'
+
+# Facebook
+  s.dependency 'FBSDKCoreKit_Basics'
+  s.dependency 'FBSDKCoreKit'
+  s.dependency 'FBSDKLoginKit'
+  s.dependency 'FBSDKShareKit'
+  s.dependency 'FBAEMKit'
+
+# Firebase
+  s.dependency 'FirebaseCore'
+  s.dependency 'FirebaseAnalytics'
+  s.dependency 'FirebaseCrashlytics'
+  s.dependency 'FirebaseMessaging'
+  s.dependency 'FirebaseAppCheck'
+#   s.dependency 'FirebaseAnalyticsOnDeviceConversion'
+  s.dependency 'GoogleSignIn'
+
 end

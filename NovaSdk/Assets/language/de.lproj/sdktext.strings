@@ -1,0 +1,110 @@
+"share_uninstall"="Installiere Facebook und teile Bilder";
+"connect"="Verbinden";
+"guest"="Gast";
+"try_again"="Erneut versuchen";
+"close"="Schließen";
+"input_password"="Passwort";
+"login_now"="Jetzt einloggen";
+"exit"="Abmelden";
+"unknown"="Unbekannter Fehler";
+"warning"="Warnung";
+"cancel"="Abbrechen";
+"continue"="Spiel fortsetzen";
+"using"="Wird benutzt";
+"code_empty"="Bitte Verifizierungscode eingeben";
+"unset"="Nicht eingestellt";
+"code_error"="Fehler beim Bestätigungscode.";
+"blocked_login_detail_device"="Dein Gerät wurde aufgrund von Verstößen gesperrt.";
+"blocked_login_detail_account"="Aufgrund von illegalen Vorgängen wurde Dein Konto gesperrt";
+"contact_service"="Wende Dich an den Kundensupport";
+"hint_username"="E-Mail-Adresse/Handy";
+"hint_email"="E-Mail-Adresse";
+"hint_phone"="Handynummer";
+"hint_code"="Verifizierungscode";
+"send_code"="Verifizierungscode abrufen";
+"facebook"="Login mit Facebook";
+"line"="Login mit Line";
+"twitter"="Login mit Twitter";
+"vk"="Login mit VK";
+"email"="Nachdem du ein Passwort eingestellt hast, kannst du dich mit E-Mail-Adresse und Passwort einloggen";
+"terms_service"="Nutzervereinbarung";
+"privacy_policy"="Datenschutzrichtlinien";
+"toast_invalide_email"="Bitte eine korrekte E-Mail Adresse eingeben";
+"login_success"="Einloggen erfolgreich";
+"code_sending"="Wird gerade verschickt...";
+"parames_null"="Das Feld \"Parameter\" darf nicht leer sein";
+"connect_email"="E-Mail verbinden";
+"ok"="Ok";
+"login_submit"="Login";
+"share"="Teilen";
+"verification_failed"="Bestellbestätigung fehlgeschlagen. Bitte erneut versuchen";
+"or"="Oder";
+"login_email"="Anmeldung via E-Mail";
+"loggined"="Anmgemeldet";
+"detail_agree"="Bitte bestätige zuerst die \"Nutzervereinbarung\" und \"Datenschutzrichtlinien\"";
+"prompt"="Erinnerung";
+"prompt_playertoken_invalid"="Anmeldestatus abgelaufen. Bitte melde Dich erneut an!";
+"reason_account_unexist"="Der Account existiert nicht";
+"reason_account_existed"="Der Account existiert bereits";
+"reason_network_error"="Netzwerkfehler";
+"agree_policy"="\"Nutzervereinbarung\" und den \"Datenschutzrichtlinien\" zustimmen";
+"pay_order_error"="Anderer Fehler, der Artikel kann nicht gekauft werden.";
+"blocked_login_detail_ip"="Deine aktuelle IP-Adresse wurde gesperrt!";
+"order_status_error"="Auftragsstatus konnte nicht abgerufen werden, bitte versuche es nochmal";
+"quick_login"="Sofort spielen";
+"next"="Weiter";
+"agree"="Einverstanden";
+"account_deletion_description"="Wenn Sie Ihr Konto wirklich kündigen müssen, überprüfen Sie bitte, ob Sie Abonnementprodukte erworben haben. Wenn ja, kündigen Sie bitte im Store. Wir werden alle Ihre Daten so schnell wie möglich löschen. Während dieser Zeit können Sie sich möglicherweise nicht anmelden. Wir entschuldigen uns für etwaige Unannehmlichkeiten.";
+"account_deletion_notice"="Konto Kündigung Hinweis";
+"operation_completed"="Operation erfolgreich";
+"connect_no_available"="Derzeit sind keine Verknüpfungsmethoden verfügbar.";
+"connect_no_need"="Da Ihr Konto bereits hochsicher ist, ist dieser Vorgang nicht erforderlich.";
+"sign_in_with_guest"="Als Gast anmelden";
+// 2.2.0
+"deregister_fail_subs"="Es gibt ein aktives Abonnement, das mit Ihrem Konto verknüpft ist. Bitte kündigen Sie das Abonnement bei Ihrem Dienstanbieter und versuchen Sie es erneut;";
+"deregister_fail_refd"="Die Aktion kann nicht abgeschlossen werden. Bitte wenden Sie sich an unseren Kundensupport.";
+"deregister_fail_processing"="Ihre Anfrage wird bearbeitet, vielen Dank für Ihre Geduld.";
+"deregister_fail_exception"="Ein unerwartetes Problem ist aufgetreten. Bitte versuchen Sie es später erneut.";
+"order_notice_paid"="Ihre Bestellung wurde erfolgreich bezahlt und wird für Sie bearbeitet.";
+
+
+"unfrozen_content"="Ihr Konto hat kürzlich Rückerstattungen vorgenommen. Dies ist eine offizielle Warnung. \nRückerstattungen: $count \nGesamtbetrag: $amount \nWeitere Rückerstattungen führen zur Sperrung des Kontos.";
+"frozen_content"="Ihr Konto wurde aufgrund von Rückerstattungen gesperrt. \nRückerstattungen: $count \nGesamtbetrag: $amount \nEs wird innerhalb von 1-2 Werktagen nach der Rückzahlung wiederhergestellt.";
+"unfrozen_button_text"="Verstanden";
+"frozen_button_text"="Jetzt zurückzahlen";
+
+
+"message_content_discord"="Tritt unserem Discord bei für Neuigkeiten, coole Events und wöchentliche Geschenkcodes!";
+"message_content_wp"="Lieber Spieler,Ein spannendes Web-Event ist jetzt live! Lade auf und erhalte 5–10% Bonus. Sammle Aufladungen für einen exklusiven Geschenkcode.Details hier >>>";
+"common_button_go_now"="Gehen Sie";
+
+"user_center_title"="Mein Konto";
+"user_center_account"="Konto";
+"user_center_account_warning"="* Zum Schutz Ihres Kontos: Diese Seite nicht weitergeben.";
+"user_center_current_login_method"="Derzeitige Login-Methode:";
+"user_center_current_login_account"="Aktiver Account:";
+"user_center_link_account"="Konto verknüpfen";
+"user_center_link_account_linked"="Verbunden";
+"user_center_support"="Support";
+"user_center_support_email_text"="Support-E-Mail:";
+"user_center_support_online_text"="Online-Hilfe:";
+"user_center_community"="Community";
+"user_center_office_btn_text"="Unsere Website";
+
+"user_switch_confirm_title"="Kontowechsel Warnung";
+"user_switch_confirm_content1"="Angemeldet:";
+"user_switch_confirm_content2"="Login-Methode:";
+"user_switch_confirm_content3"="Charakter:";
+"user_switch_confirm_content4"="Wechsel meldet dich ab. Fortfahren?";
+"common_guest"="Compte invité";
+"common_button_go"="Los";
+
+"login_select_one_account"="Vorhandenes Konto nutzen";
+"use_other_account"="Andere Verifizierungsmethode verwenden";
+"login_select_one_method"="Unterstützte Verifizierungsmethoden";
+"login_id_nonidentical"="Konto nicht übereinstimmend";
+
+"order_cancel_confirm" = "Aktuelle Bestellung stornieren?";
+"order_result_notify" = "Nach Abschluss der Bestellung wird der Gegenstand an Ihren Spiel-Posteingang gesendet.";
+
+"share_to" = "Teilen an:";

@@ -1,0 +1,10 @@
+
+framework module ios_sdk {
+    
+    umbrella header "NovaSDK.h"
+    umbrella header "MBProgressHUD.h"
+    
+    export *
+    module * { export * }
+ 
+}

@@ -1,0 +1,111 @@
+"share_uninstall"="Veuillez partager les images après avoir installé facebook.";
+"connect"="Lier";
+"guest"="Invité";
+"try_again"="Réessayer";
+"close"="Fermer";
+"input_password"="Mot de passe";
+"login_now"="Se connecter maintenant";
+"exit"="Quitter le jeu";
+"unknown"="Erreur inconnue";
+"warning"="Avertissement";
+"cancel"="Annuler";
+"using"="En cours d'Utilisation";
+"code_empty"="Veuillez entrer le code de vérification";
+"unset"="Non configuré";
+"code_error"="Échec du code de vérification";
+"blocked_login_detail_device"="Votre compte a été bloqué suite à une opération illégale.";
+"blocked_login_detail_account"="Votre compte a été bloqué suite à une opération illégale.";
+"contact_service"="Veuillez contacter le service client.";
+"hint_username"="Courriel/Téléphone";
+"hint_email"="Courriel";
+"hint_phone"="Numéro de téléphone";
+"hint_code"="Code vérification";
+"send_code"="Obtenir code";
+"facebook"="Se connecter avec Facebook";
+"line"="Se connecter avec Line";
+"twitter"="Se connecter avec Twitter";
+"vk"="Se connecter avec VK";
+"email"="Après avoir créé un mot de passe, vous pouvez vous connecter avec votre courriel et le mot de passe.";
+"terms_service"="Conditions d'Utilisation";
+"privacy_policy"="Politique de confidentialité";
+"toast_invalide_email"="Veuillez saisir une adresse électronique correcte";
+"code_sending"="En cours d'envoi...";
+"parames_null"="Les paramètres ne peuvent pas être vides.";
+"connect_email"="Lier une adresse électronique";
+"ok"="Confirmer";
+"login_submit"="Se connecter";
+"share"="Partager";
+"verification_failed"="Échec de la vérification de la commande, veuillez réessayer";
+"or"="Ou";
+"login_email"="Se connecter par courriel";
+"loggined"="Connecté";
+"detail_agree"="Veuillez d'abord accepter les \"Conditions d'Utilisation\" et la \"Politique de confidentialité\"";
+"prompt"="Rappel";
+"prompt_playertoken_invalid"="La connexion a expiré, veuillez vous reconnecter!";
+"reason_account_existed"="Compte existant";
+"reason_network_error"="Connexion instable";
+"agree_policy"="Accepter les \"Conditions d'Utilisation\" et la \"Politique de confidentialité\"";
+"blocked_login_detail_ip"="Votre adresse IP actuelle a été bloquée !";
+"order_status_error"="Obtention de l'état de la commande échoué, veuillez réessayer.";
+"quick_login"="Joue Maintenant";
+"next"="Prochaine etape";
+"agree"="Accepter";
+"account_deletion_description"="Si vous avez vraiment besoin d\'annuler votre compte, veuillez vérifier si vous avez acheté des produits d\'abonnement. Si tel est le cas, veuillez annuler en magasin. Nous supprimerons toutes vos données dès que possible. Pendant cette période, vous ne pourrez peut-être pas vous connecter. Nous nous excusons pour tout inconvénient occasionné.";
+"permission_confirm"="OK";
+"account_deletion_notice"="Rappel d'annulation de compte";
+"operation_completed"="Opération réussi";
+"connect_no_available"="Actuellement, il n'y a aucune méthode d'association disponible.";
+"connect_no_need"="Puisque votre compte est déjà très sécurisé, cette opération n'est pas requise.";
+
+"sign_in_with_guest"="Se connecter en tant qu'invité";
+// 2.2.0
+"deregister_fail_subs"="Il y a un abonnement actif associé à votre compte, veuillez annuler l’abonnement auprès de votre fournisseur de services, puis réessayez";
+"deregister_fail_refd"="L'action ne peut pas être complétée, veuillez contacter notre support client.";
+"deregister_fail_processing"="Votre demande est en cours de traitement, merci de votre patience.";
+"deregister_fail_exception"="Un problème inattendu est survenu, veuillez réessayer plus tard.";
+"order_notice_paid"="Vous avez une commande qui a été payée avec succès et qui est en cours de traitement pour vous.";
+
+"unfrozen_content"="Votre compte a récemment effectué des remboursements. Ceci est un avertissement officiel. \nRemboursements : $count \nMontant total : $amount \nDes remboursements supplémentaires entraîneront la suspension du compte.";
+"frozen_content"="Votre compte a été suspendu en raison de remboursements récents. \nRemboursements : $count \nMontant total : $amount \nIl sera rétabli automatiquement sous 1 à 2 jours ouvrables après le remboursement.";
+"unfrozen_button_text"="Compris";
+"frozen_button_text"="Payer maintenant";
+
+
+"message_content_discord"="Rejoignez notre Discord pour les dernières actus, des événements exclusifs et des codes cadeaux chaque semaine!";
+"message_content_wp"="Cher joueur,Un événement web est en cours ! Rechargez pour recevoir un bonus de 5% à 10%, et cumulez pour obtenir un code cadeau exclusif.Voir les détails >>>";
+"common_button_go_now"="Allez-y";
+
+
+"user_center_title"="Mon compte";
+"user_center_account"="Compte";
+"user_center_account_warning"="* Pour la sécurité de votre compte, veuillez ne pas partager cette page.";
+"user_center_current_login_method"="Connexion actuelle:";
+"user_center_current_login_account"="Compte actif:";
+"user_center_link_account"="Lier un compte";
+"user_center_link_account_linked"="Connecté";
+"user_center_support"="Support";
+"user_center_support_email_text"="Email du support:";
+"user_center_support_online_text"="Assistance en ligne:";
+"user_center_community"="Communauté";
+"user_center_office_btn_text"="Notre Site";
+
+
+"user_switch_confirm_title"="Avert. de compte";
+"user_switch_confirm_content1"="Connecté:";
+"user_switch_confirm_content2"="Méthode:";
+"user_switch_confirm_content3"="Perso en cours:";
+"user_switch_confirm_content4"="Changer déconnectera ce compte. Continuer ?";
+"common_guest"="Compte invité";
+"common_button_go"="Aller";
+
+
+"login_select_one_account"="Utiliser un compte existant";
+"use_other_account"="Utiliser un autre mode de vérification";
+"login_select_one_method"="Méthodes de vérification prises en charge";
+"login_id_nonidentical"="Compte non concordant";
+
+"order_cancel_confirm" = "Annuler la commande en cours?";
+"order_result_notify" = "Une fois la commande finalisée, l\'article sera envoyé à votre boîte aux lettres en jeu.";
+
+"login_success" = "Connexion réussie";
+"share_to" = "Partager vers:";

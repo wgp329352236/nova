@@ -1,9 +1,8 @@
 //
 //  AppDelegate.swift
-//  NovaSdk
+//  NovaSdkDemo
 //
-//  Created by WGP on 01/06/2026.
-//  Copyright (c) 2026 WGP. All rights reserved.
+//   Created on 2024/6/15.
 //
 
 import UIKit
@@ -11,47 +10,199 @@ import UIKit
 import NovaSdk
 import NovaCore
 
-
 import AdjustSdk
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(
+            _ application: UIApplication,
+            didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        
         // Override point for customization after application launch.
-    
-        NovaKit.shared.initialize(isDebug: true, language: Language.english)
-        
-        
+        NovaAppDelegate.application(application, didFinishLaunchingWithOptions: launchOptions)
+        NovaKit.shared.initialize(isDebug: true, language: Language.chineseSimplified).then {
+            mdebug("[NovaKit]: Init Success")
+        }.otherwise { throwable in
+            mdebug("[NovaKit]: Init Fail: \(throwable?.message ?? "")")
+        }
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    // Deep linking
+    func application(
+            _ app: UIApplication,
+            open url: URL,
+            options: [UIApplication.OpenURLOptionsKey: Any]
+    ) -> Bool {
+        NovaAppDelegate.application(app, open: url, options: options)
+
+        if let scheme = url.scheme, scheme.isEmpty == false {
+            // 处理URL
+            let alert = UIAlertController(title: "Deep Link", message: "Deep Link: \(url)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+           return true
+        }
+        return true
+    }
+
+    func application(
+            _ application: UIApplication,
+            didFailToRegisterForRemoteNotificationsWithError error: any Error
+    ) {
+        print("Device Token error: \(error.localizedDescription)")
+    }
+    
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        NovaAppDelegate.applicationDidBecomeActive(application)
+        NovaKit.shared.showAppOpenAd(adUnitName: "appopen", placement: "placement-5566")
+            .then { result in
+                print("[DidBecomeActive]: - showAppOpenAd - result:\(result!)")
+            }
+            .otherwise { throwable in
+                print("[DidBecomeActive]: - showAppOpenAd - throwable:\(throwable.message ?? "")")
+            }
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        NovaAppDelegate.applicationDidEnterBackground(application)
     }
 
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    func application(
+            _ application: UIApplication,
+            didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+    ) {
+        let tokenString = deviceToken.map {
+                    String(format: "%02.2hhx", $0)
+                }
+                .joined()
+        print("Device Token: \(tokenString)")
+        NovaAppDelegate.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+    }
+    
+    private func application(
+            _ application: UIApplication,
+            performedFetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void
+    ) {
+
     }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
+    // Universal Links
+    func application(
+            _ application: UIApplication,
+            continue userActivity: NSUserActivity,
+            restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void
+    ) -> Bool {
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+            if let incomingURL = userActivity.webpageURL {
+                // call the below method to resolve deep link
+                ADJLinkResolution.resolveLink(
+                        with: incomingURL,
+                        resolveUrlSuffixArray: ["email.example.com", "short.example.com"],
+                        callback: { [weak self] resolvedURL in
+                            // add your code below to handle deep link
+                            // (for example, open deep link content)
+                            // resolvedURL object contains the deep link
+                            if let resolvedDeeplink = resolvedURL {
+                                
+                                NSLog("scene continue restoration deeplink = \(resolvedDeeplink)")
+
+                                // call the below method to send deep link to Adjust's servers
+                                if let deeplink = ADJDeeplink(deeplink: resolvedDeeplink) {
+                                    Adjust.processDeeplink(deeplink)
+                                }
+                            }
+                        })
+            }
+        } else {
+            return false
+        }
+
+        return true
     }
 
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    //MARK: - deep-links
+    func scene(
+            _ scene: UIScene,
+            willConnectTo session: UISceneSession,
+            options connectionOptions: UIScene.ConnectionOptions
+    ) {
+        guard let userActivity = connectionOptions.userActivities.first,
+              userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+              let incomingURL = userActivity.webpageURL
+        else {
+            return
+        }
+
+        // call the below method to resolve deep link
+        ADJLinkResolution.resolveLink(
+                with: incomingURL,
+                resolveUrlSuffixArray: ["novasonic.go.link"],
+                callback: { [weak self] resolvedURL in
+                    // add your code below to handle deep link
+                    // (for example, open deep link content)
+                    // resolvedURL object contains the deep link
+
+                    if let resolvedDeeplink = resolvedURL {
+                        NSLog("scene willConnectTo deeplink = \(resolvedDeeplink)")
+
+                        // call the below method to send deep link to Adjust's servers
+                        if let deeplink = ADJDeeplink(deeplink: resolvedDeeplink) {
+                            Adjust.processDeeplink(deeplink)
+                        }
+                    }
+                })
     }
 
+    func scene(
+            _ scene: UIScene,
+            continue userActivity: NSUserActivity
+    ) {
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+            if let incomingURL = userActivity.webpageURL {
+                // call the below method to resolve deep link
+                ADJLinkResolution.resolveLink(
+                        with: incomingURL,
+                        resolveUrlSuffixArray: ["novasonic.go.link"],
+                        callback: { [weak self] resolvedURL in
+                            if let resolvedDeeplink = resolvedURL {
+                                
+                                NSLog("scene continue deeplink = \(resolvedDeeplink)")
+                                
+                                // call the below method to send deep link to Adjust's servers
+                                if let deeplink = ADJDeeplink(deeplink: resolvedDeeplink) {
+                                    Adjust.processDeeplink(deeplink)
+                                }
+                            }
+                        }
+                )
+            }
+        }
+    }
 
+    //MARK: - universal-links
+    func scene(
+            _ scene: UIScene,
+            openURLContexts URLContexts: Set<UIOpenURLContext>
+    ) {
+        guard let incomingURL = URLContexts.first?.url else {
+            return
+        }
+
+        // call the below method to send deep link to Adjust's servers
+        if let deeplink = ADJDeeplink(deeplink: incomingURL) {
+            
+            NSLog("scene openURLContexts deeplink = \(deeplink)")
+
+            
+            Adjust.processDeeplink(deeplink)
+        }
+    }
 }
 

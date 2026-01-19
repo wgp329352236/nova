@@ -1,0 +1,108 @@
+"share_uninstall"="먼저 Facebook을 설치한 후 사진을 공유하세요";
+"connect"="연동";
+"guest"="게스트";
+"try_again"="다시 시도";
+"close"="닫기";
+"input_password"="비밀번호";
+"login_now"="로그인";
+"exit"="게임 종료";
+"unknown"="알 수 없는 오류";
+"warning"="경고";
+"cancel"="취소";
+"using"="사용 중";
+"code_empty"="인증번호 입력";
+"unset"="미설정";
+"code_error"="인증번호 오류";
+"blocked_login_detail_device"="게임 내에서 불법적인 행위가 발견되어 사용 중인 기기를 차단 처리했습니다";
+"blocked_login_detail_account"="게임 내에서 불법적인 행위가 발견되어 사용 중인 계정을 차단 처리했습니다";
+"contact_service"="고객센터에 문의하기";
+"hint_username"="이메일/휴대폰 번호";
+"hint_email"="이메일";
+"hint_phone"="휴대폰 번호";
+"hint_code"="인증번호";
+"send_code"="인증번호";
+"facebook"="Facebook로 로그인";
+"line"="LINE으로 로그인";
+"twitter"="Twitter로 로그인";
+"vk"="VK로 로그인";
+"email"="비밀번호 설정 후 이메일 주소+비밀번호를 입력하면 로그인할 수 있습니다";
+"terms_service"="이용약관";
+"privacy_policy"="개인정보 정책";
+"toast_invalide_email"="정확한 이메일 주소를 입력하세요";
+"code_sending"="발송 중…";
+"parames_null"="공간을 비워둘 수 없습니다";
+"connect_email"="이메일 동기화";
+"ok"="확인";
+"login_submit"="로그인";
+"share"="공유";
+"verification_failed"="주문 인증 실패, 다시 시도해 주세요";
+"or"="또는";
+"login_email"="이메일로 로그인";
+"loggined"="로그인 완료";
+"detail_agree"="우선 &lt;이용약관&gt; 및 &lt;개인정보 정책&gt;을 확인하세요";
+"prompt"="주의";
+"prompt_playertoken_invalid"="접속이 끊겼습니다, 다시 로그인 하세요!";
+"reason_account_existed"="가입한 계정입니다";
+"reason_network_error"="네트워크 오류";
+"agree_policy"="&lt;이용약관&gt; 및 &lt;개인정보 정책&gt;에 동의";
+"pay_order_error"="기타 오류, 현재 해당 상품을 구매할 수 없습니다.";
+"blocked_login_detail_ip"="현재 사용 중인 IP는 접근이 금지됐습니다!";
+"order_status_error"="주문 상태 확보 실패, 다시 시도해 주세요.";
+"quick_login"="빠른 체험";
+"next"="다음";
+"agree"="동의";
+"account_deletion_description"="정말로 계정을 취소해야 하는 경우 구독 상품을 구매했는지 확인하시기 바랍니다. 그렇다면 매장에서 취소해주세요. 가능한 한 빨리 귀하의 모든 데이터를 삭제하겠습니다. 해당 기간 동안 로그인이 불가능할 수 있습니다. 불편을 끼쳐드려 죄송합니다.";
+"account_deletion_notice"="계정 삭제 알림";
+"operation_completed"="완료";
+"connect_no_available"="현재 사용할 수 있는 연결 방법이 없습니다.";
+"connect_no_need"="귀하의 계정이 이미 매우 안전하므로 이 작업은 필요하지 않습니다.";
+"sign_in_with_guest"="게스트로 로그인";
+// 2.2.0
+"deregister_fail_subs"="귀하의 계정에 연결된 활성 구독이 있습니다. 서비스 제공업체에 구독을 취소한 후 다시 시도하십시오.";
+"deregister_fail_refd"="작업을 완료할 수 없습니다. 고객 지원 팀에 문의하십시오.";
+"deregister_fail_processing"="귀하의 요청이 처리 중입니다. 기다려 주셔서 감사합니다.";
+"deregister_fail_exception"="예기치 않은 문제가 발생했습니다. 나중에 다시 시도하십시오.";
+"order_notice_paid"="결제가 성공적으로 완료된 주문이 있으며, 지금 처리되고 있습니다.";
+
+
+"unfrozen_content"="귀하의 계정에서 최근 환불이 발생했습니다. 이는 공식 경고입니다.\n환불 횟수: $count \n총액: $amount \n추가 환불 시 계정이 정지됩니다.";
+"frozen_content"="최근 환불로 인해 귀하의 계정이 정지되었습니다.\n환불 횟수: $count \n총액: $amount \n상환 후 1-2영업일 이내에 자동으로 복구됩니다.";
+"unfrozen_button_text"="확인";
+"frozen_button_text"="지금 상환";
+
+"message_content_discord"="최신 소식, 이벤트 정보, 주간 선물 코드를 받으려면 디스코드에 참여하세요!";
+"message_content_wp"="플레이어님, 홈페이지에서 신나는 이벤트가 진행 중입니다! 충전 시 5%~10% 보너스를 받고, 충전 금액 누적 시 독점 선물 코드를 획득하세요.자세히 보기 >>>";
+"common_button_go_now"="지금 이동";
+
+"user_center_title"="내 계정";
+"user_center_account"="계정";
+"user_center_account_warning"="* 계정 보호를 위해 이 페이지를 공유하지 마세요.";
+"user_center_current_login_method"="현재 로그인 방식:";
+"user_center_current_login_account"="활성 계정:";
+"user_center_link_account"="계정 연결";
+"user_center_link_account_linked"="연결됨";
+"user_center_support"="고객지원";
+"user_center_support_email_text"="지원 이메일:";
+"user_center_support_online_text"="온라인 지원:";
+"user_center_community"="커뮤니티";
+"user_center_office_btn_text"="공식 사이트";
+
+"user_switch_confirm_title"="계정 전환 경고";
+"user_switch_confirm_content1"="현재 로그인:";
+"user_switch_confirm_content2"="로그인 방식:";
+"user_switch_confirm_content3"="사용 중인 캐릭터:";
+"user_switch_confirm_content4"="계정을 전환하면 현재 세션에서 로그아웃됩니다. 계속하시겠습니까?";
+"common_guest"="게스트";
+"common_button_go"="이동";
+
+
+"login_select_one_account"="기존 계정 사용";
+"use_other_account"="다른 인증 방법 사용";
+"login_select_one_method"="지원되는 인증 방법";
+"login_id_nonidentical"="계정 불일치";
+
+"order_cancel_confirm" = "현재 주문을 취소하시겠습니까?";
+"order_result_notify" = "주문 완료 시 아이템이 게임 내 우편함으로 배송됩니다.";
+
+"login_success" = "로그인 성공";
+"share_to" = "공유 대상:";
