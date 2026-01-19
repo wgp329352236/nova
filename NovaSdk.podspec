@@ -7,7 +7,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NovaSdk'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'A short description of NovaSdk.'
   s.swift_versions   = ['5.8']
   s.static_framework = true
