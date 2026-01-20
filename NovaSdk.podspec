@@ -13,14 +13,15 @@ Pod::Spec.new do |s|
   s.static_framework = true
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+    NovaSdk 是为iOS项目开发的私有组件库，集成了网络请求封装、自定义UI控件、图片资源管理等核心功能，
+    兼容iOS 11.0+，支持组件化集成，提升项目开发效率。
                        DESC
 
-  s.homepage         = 'https://github.com/wgp329352236/NovaSdk'
+  s.homepage         = 'https://github.com/wgp329352236/nova'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'WGP' => 'wgp329352236@gmail.com' }
-  s.source           = { :git => 'https://github.com/wgp329352236/nova.git', :tag => s.version.to_s }
+  s.source           = { :git => 'git@github.com:wgp329352236/nova.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '15.0'
@@ -56,11 +57,10 @@ TODO: Add long description of the pod here.
 
   s.frameworks = 'UIKit', 'Foundation'
   s.vendored_frameworks = [
-    'Dependencies/Nova/*.xcframework',
-    'Dependencies/CMP/*.xcframework',
-
-    'Dependencies/ThinkingData/*.xcframework',
-    'Dependencies/Sobot/*.framework'
+    'Frameworks/Nova/*.xcframework',
+    'Frameworks/CMP/*.xcframework',
+    'Frameworks/ThinkingData/*.xcframework',
+    'Frameworks/Sobot/*.framework'
   ]
 
   s.xcconfig = {
