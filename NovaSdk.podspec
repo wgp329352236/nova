@@ -72,11 +72,15 @@ Pod::Spec.new do |s|
         'ALWAYS_SEARCH_USER_PATHS' => 'NO'
   }
 
+   # 忽略 Swift 预览禁用警告
+   s.user_target_xcconfig = {
+        'SWIFT_OPTIMIZATION_LEVEL' => '-Onone'
+   }
+
   s.dependency 'MMKV', '~> 2.3.0'
   s.dependency 'Adjust', '~> 5.5.1'
   s.dependency 'SnapKit', '~> 5.7.1'
   s.dependency 'MBProgressHUD', '~> 1.2.0'
-  s.dependency 'HandyJSON', '~> 5.0.2'
 
 # Facebook
   s.dependency 'FBSDKCoreKit_Basics'

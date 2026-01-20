@@ -343,14 +343,14 @@ class BaseTextField: UITextField, UITextFieldDelegate {
     // MARK: -
     @discardableResult
     override func becomeFirstResponder() -> Bool {
-        background = UIImage.color(color: UIColor.hexColor(LocalUIConfig.textField.border_color_selected))
+        background = UIImage.color(color: .black)
         borderColor = UIColor.dynamicColor(gameTheme.borderTextField.focusBorderColor)
         return super.becomeFirstResponder()
     }
 
     @discardableResult
     override func resignFirstResponder() -> Bool {
-        background = UIImage.color(color: UIColor.hexColor(LocalUIConfig.textField.border_color_normal))
+        background = UIImage.color(color: .lightGray)
         borderColor = UIColor.dynamicColor(gameTheme.borderTextField.borderColor)
         return super.resignFirstResponder()
     }
