@@ -1,0 +1,33 @@
+use_frameworks!
+
+platform :ios, '15.0'
+
+target 'NovaSdk_Example' do
+  pod 'NovaSdk', :path => '../'
+
+  # pod 'Alamofire'
+
+  # 为所有 pods 设置 deployment target
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+        # 为Xcode 16添加兼容性配置
+        config.build_settings['CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER'] = 'NO'
+        config.build_settings['CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'] = 'YES'
+        
+        # 针对Xcode 16的额外配置
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0' if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 12.0
+        
+        # 优化调试体验 - 减少预编译框架的调试警告
+        config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf-with-dsym'
+      end
+    end
+  end
+
+  target 'NovaSdk_Tests' do
+    inherit! :search_paths
+
+
+  end
+end
